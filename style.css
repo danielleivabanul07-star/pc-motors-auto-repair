@@ -939,3 +939,25 @@ footer {
   }
 
 }
+@media (max-width:768px){
+
+  body{
+    background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url("imagenes/fondoweb.png") !important;
+    background-size: 145% auto !important;
+    background-position: center top !important;
+    background-repeat: repeat-y !important;
+    background-attachment: scroll !important;
+  }
+
+  section,
+  .services,
+  .gallery,
+  .contact,
+  .financing,
+  .social-section{
+    background: transparent !important;
+  }
+
+}
