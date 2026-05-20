@@ -906,3 +906,20 @@ footer {
   border-radius: 18px;
   display: block;
 }
+@media (max-width: 768px) {
+
+  body {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+
+  .hero,
+  .page-hero,
+  .section,
+  main {
+    background: transparent !important;
+  }
+
+}
