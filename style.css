@@ -961,3 +961,33 @@ footer {
   }
 
 }
+@media (max-width:768px){
+
+  body,
+  main,
+  section,
+  .hero,
+  .social-section,
+  .services,
+  .gallery,
+  .contact,
+  .financing,
+  .about,
+  .container{
+    background-color: transparent !important;
+  }
+
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+      url("imagenes/fondoweb.png");
+    background-size: 145% auto;
+    background-position: center top;
+    background-repeat: repeat-y;
+  }
+
+}
