@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Cita | PC Motors Auto Repair</title>
+  <meta name="description" content="PC Motors Auto Repair - mecánica general, electricidad automotriz, diagnóstico, citas, financiamiento, pagos online, redes sociales y contacto rápido.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><span>PC</span> Motors</a>
+
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+
+  <nav class="nav" id="navMenu">
+    <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+    <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+    <a href="galeria.html" data-es="Galería" data-en="Gallery">Galería</a>
+    <a href="citas.html" data-es="Agendar Cita" data-en="Book Appointment">Agendar Cita</a>
+    <a href="financiamiento.html" data-es="Financiamiento" data-en="Financing">Financiamiento</a>
+    <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+    <button class="language-btn" id="languageBtn" type="button">EN</button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <p class="tagline center" data-es="Agendar cita" data-en="Book Appointment">Agendar cita</p>
+    <h1 data-es="Agenda una revisión para tu vehículo" data-en="Book an inspection for your vehicle">Agenda una revisión para tu vehículo</h1>
+    <p data-es="Completa el formulario y elige si quieres enviarlo por correo, WhatsApp o SMS."
+       data-en="Complete the form and choose whether to send it by email, WhatsApp or SMS.">
+       Completa el formulario y elige si quieres enviarlo por correo, WhatsApp o SMS.
+    </p>
+  </section>
+
+  <section class="section form-layout">
+    <div class="highlight-box">
+      <h2 data-es="Información para tu cita" data-en="Appointment information">Información para tu cita</h2>
+      <p data-es="Incluye todos los detalles posibles: modelo del vehículo, problema, luces encendidas en el tablero, ruidos, fecha preferida y método de contacto."
+         data-en="Include as many details as possible: vehicle model, issue, dashboard lights, noises, preferred date and contact method.">
+         Incluye todos los detalles posibles: modelo del vehículo, problema, luces encendidas en el tablero, ruidos, fecha preferida y método de contacto.
+      </p>
+
+      <div class="contact-stack">
+        <a href="tel:5026121554" class="btn primary" data-es="📞 Llamar ahora" data-en="📞 Call now">📞 Llamar ahora</a>
+        <a href="https://wa.me/15026121554" target="_blank" class="btn outline">🟢 WhatsApp</a>
+        <a href="sms:5026121554" class="btn outline">💬 SMS</a>
+      </div>
+    </div>
+
+    <form class="form" id="appointmentForm">
+      <h2 data-es="Formulario de cita" data-en="Appointment form">Formulario de cita</h2>
+
+      <label data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombre completo / Full name" required>
+
+      <label data-es="Teléfono" data-en="Phone">Teléfono</label>
+      <input type="tel" id="telefono" name="Telefono" placeholder="Teléfono / Phone" required>
+
+      <label data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
+      <input type="email" id="correo" name="Email" placeholder="Email">
+
+      <label data-es="Vehículo" data-en="Vehicle">Vehículo</label>
+      <input type="text" id="vehiculo" name="Vehiculo" placeholder="Ejemplo: Toyota Corolla 2020">
+
+      <label data-es="Servicio que necesitas" data-en="Service needed">Servicio que necesitas</label>
+      <select id="servicio" name="Servicio">
+        <option>Mecánica general / General mechanics</option>
+        <option>Electricidad automotriz / Auto electrical</option>
+        <option>Diagnóstico computarizado / Computer diagnostics</option>
+        <option>Frenos / Brakes</option>
+        <option>Suspensión / Suspension</option>
+        <option>Aire acondicionado / A/C</option>
+        <option>Otro / Other</option>
+      </select>
+
+      <label data-es="Fecha preferida" data-en="Preferred date">Fecha preferida</label>
+      <input type="date" id="fecha" name="Fecha preferida">
+
+      <label data-es="Hora preferida" data-en="Preferred time">Hora preferida</label>
+      <input type="time" id="hora" name="Hora preferida">
+
+      <label data-es="Descripción del problema" data-en="Issue description">Descripción del problema</label>
+      <textarea id="mensaje" name="Mensaje" rows="6" placeholder="Describe el problema / Describe the issue"></textarea>
+
+      <div class="hero-buttons">
+        <button class="btn primary" type="button" onclick="enviarCitaEmail()" data-es="Enviar por Email" data-en="Send by Email">Enviar por Email</button>
+
+        <button class="btn outline" type="button" onclick="enviarCitaWhatsApp()" data-es="Enviar por WhatsApp" data-en="Send by WhatsApp">Enviar por WhatsApp</button>
+
+        <button class="btn dark" type="button" onclick="enviarCitaSMS()" data-es="Enviar por SMS" data-en="Send by SMS">Enviar por SMS</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3>PC Motors Auto Repair</h3>
+      <p data-es="Mecánica general, electricidad automotriz, diagnóstico, mantenimiento y reparación profesional."
+         data-en="General mechanics, auto electrical service, diagnostics, maintenance and professional repair.">
+         Mecánica general, electricidad automotriz, diagnóstico, mantenimiento y reparación profesional.
+      </p>
+    </div>
+
+    <div>
+      <h3 data-es="Contacto rápido" data-en="Quick Contact">Contacto rápido</h3>
+      <a href="tel:5026121554">📞 502-612-1554</a>
+      <a href="sms:5026121554" data-es="💬 Mensaje SMS" data-en="💬 SMS Message">💬 Mensaje SMS</a>
+      <a href="https://wa.me/15026121554" target="_blank">🟢 WhatsApp</a>
+      <a href="pcmotorsautorepair@gmail.com">✉️ Email</a>
+      <p>📍 5506 Camp Ground Rd, Louisville, KY 40216</p>
+    </div>
+
+    <div>
+      <h3 data-es="Síguenos" data-en="Follow Us">Síguenos</h3>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/pablo.cedeno.37315/" target="_blank" class="social-icon facebook" aria-label="Facebook">
+          <span class="icon-circle">f</span>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram" aria-label="Instagram">
+          <span class="icon-circle">◎</span>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@pablo.cedeo290" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+          <span class="icon-circle">♪</span>
+          <span>TikTok</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <p class="copy">© 2026 PC Motors Auto Repair. All rights reserved.</p>
+</footer>
+
+<div class="mobile-contact-bar">
+  <a href="tel:5026121554" data-es="📞 Llamar" data-en="📞 Call">📞 Llamar</a>
+  <a href="https://wa.me/15026121554" target="_blank">WhatsApp</a>
+  <a href="citas.html" data-es="Cita" data-en="Book">Cita</a>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function crearMensajeCita() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const vehiculo = document.getElementById("vehiculo").value.trim();
+  const servicio = document.getElementById("servicio").value;
+  const fecha = document.getElementById("fecha").value;
+  const hora = document.getElementById("hora").value;
+  const mensaje = document.getElementById("mensaje").value.trim();
+
+  return `Solicitud de cita - PC Motors Auto Repair
+
+Nombre: ${nombre}
+Teléfono: ${telefono}
+Correo electrónico: ${correo}
+Vehículo: ${vehiculo}
+Servicio que necesita: ${servicio}
+Fecha preferida: ${fecha}
+Hora preferida: ${hora}
+
+Descripción del problema:
+${mensaje}
+
+Dirección del taller:
+5506 Camp Ground Rd, Louisville, KY 40216`;
+}
+
+function validarFormularioCita() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+
+  if (!nombre || !telefono) {
+    alert("Por favor completa al menos el nombre y el teléfono antes de enviar la solicitud.");
+    return false;
+  }
+
+  return true;
+}
+
+function enviarCitaEmail() {
+  if (!validarFormularioCita()) return;
+
+  const asunto = "Solicitud de cita - PC Motors Auto Repair";
+  const mensaje = crearMensajeCita();
+
+  window.location.href =
+    `mailto:pcmotors@example.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(mensaje)}`;
+}
+
+function enviarCitaWhatsApp() {
+  if (!validarFormularioCita()) return;
+
+  const mensaje = crearMensajeCita();
+
+  window.open(
+    `https://wa.me/15026121554?text=${encodeURIComponent(mensaje)}`,
+    "_blank"
+  );
+}
+
+function enviarCitaSMS() {
+  if (!validarFormularioCita()) return;
+
+  const mensaje = crearMensajeCita();
+
+  window.location.href =
+    `sms:5026121554?body=${encodeURIComponent(mensaje)}`;
+}
+</script>
+
+</body>
+</html>

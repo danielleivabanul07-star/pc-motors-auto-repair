@@ -1,0 +1,907 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --black:#050505;
+  --dark:#101010;
+  --card:#151515;
+  --yellow:#ffb000;
+  --orange:#ff6a00;
+  --white:#ffffff;
+  --gray:#d6d6d6;
+  --blue:#1877f2;
+  --pink:#e1306c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  
+  background:
+    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+    url("imagenes/fondoweb.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 7%;
+  background: rgba(0,0,0,.94);
+  border-bottom: 2px solid var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.brand span {
+  color: var(--yellow);
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 800;
+  transition: .25s;
+}
+
+.nav a:hover {
+  color: var(--yellow);
+}
+
+.menu-btn,
+.language-btn {
+  background: var(--yellow);
+  color: #000;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 7% 80px;
+
+  background:
+    linear-gradient(rgba(0, 0, 0,0.70), rgba(0, 0, 0, 0.70)),
+    url("imagenes/fondo-global.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation:cambiarFondo 25s infinite
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: .center
+}
+
+.hero-content {
+  max-width: 880px;
+}
+
+.tagline {
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: .95;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 18px #000;
+}
+
+.hero h2 {
+  font-size: clamp(26px, 4vw, 44px);
+  color: var(--yellow);
+  text-transform: uppercase;
+  margin: 18px 0;
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--gray);
+  max-width: 780px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 22px;
+  border: 2px solid var(--yellow);
+  border-radius: 10px;
+  font-weight: 900;
+  margin: 7px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 22px rgba(255,176,0,.6);
+}
+
+.primary {
+  background: var(--yellow);
+  color: #000;
+}
+
+.outline {
+  background: transparent;
+  color: var(--white);
+}
+
+.dark {
+  background: #000;
+  color: var(--yellow);
+}
+
+.outline-black {
+  background: transparent;
+  color: #000;
+  border-color: #000;
+}
+
+.hero-social {
+  margin-top: 22px;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  background: #111;
+  border: 1px solid rgba(255,176,0,.5);
+  transition: .25s;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(255,176,0,.5);
+}
+
+.icon-circle {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  background: var(--yellow);
+  color: #000;
+}
+
+.facebook .icon-circle {
+  background: var(--blue);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+
+.instagram .icon-circle {
+  background: linear-gradient(135deg, #feda75, #d62976, #962fbf, #4f5bd5);
+  color: white;
+  font-size: 21px;
+}
+
+.tiktok .icon-circle {
+  background: #000;
+  color: white;
+  border: 2px solid #25f4ee;
+  font-size: 21px;
+}
+
+.quick-contact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 22px 7%;
+  background: #090909;
+  border-top: 1px solid rgba(255,176,0,.45);
+  border-bottom: 1px solid rgba(255,176,0,.45);
+}
+
+.quick-btn {
+  text-align: center;
+  padding: 16px;
+  background: linear-gradient(145deg, #161616, #080808);
+  border: 1px solid rgba(255,176,0,.5);
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  transition: .25s;
+}
+
+.quick-btn:hover {
+  background: var(--yellow);
+  color: #000;
+}
+
+.section {
+  padding: 90px 7%;
+}
+
+.center {
+  text-align: center;
+}
+
+.section h2,
+.page-hero h1,
+.cta h2 {
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  color: var(--gray);
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.about-section,
+.action-section,
+.form-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.highlight-box,
+.action-card,
+.form,
+.payment-card,
+.contact-card,
+.service-preview,
+.service-full-card {
+  background: linear-gradient(145deg, #151515, #050505);
+  border: 2px solid rgba(255,176,0,.55);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 0 25px rgba(0,0,0,.45);
+}
+
+.highlight-box h3,
+.highlight-box h2,
+.action-card h2,
+.form h2,
+.payment-card h3,
+.contact-card h2,
+.service-preview h3,
+.service-full-card h2 {
+  color: var(--yellow);
+}
+
+.highlight-box ul,
+.finance-details ul {
+  margin-left: 22px;
+  margin-top: 16px;
+}
+
+.dark-section {
+  background:
+    radial-gradient(circle at center, rgba(255,176,0,.15), transparent 55%),
+    #090909;
+}
+
+.service-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.service-preview {
+  display: block;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.service-preview:hover,
+.payment-card:hover,
+.contact-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 0 25px rgba(255,176,0,.55);
+}
+
+.service-preview img,
+.service-full-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid rgba(255,176,0,.65);
+  margin-bottom: 18px;
+}
+
+.spacing {
+  margin-top: 30px;
+}
+
+.payment-section {
+  background: #0b0b0b;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.payment-card {
+  text-align: center;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.payment-card span {
+  font-size: 42px;
+}
+
+.payment-card p {
+  color: var(--gray);
+}
+
+.note {
+  color: var(--gray);
+  margin-top: 25px;
+}
+
+.cta {
+  padding: 80px 7%;
+  text-align: center;
+  background: linear-gradient(90deg, var(--orange), var(--yellow));
+  color: #000;
+}
+
+.page-hero {
+  margin-top: 72px;
+  padding: 105px 7%;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,.88), rgba(0,0,0,.92)),
+    url("imagenes/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero p {
+  color: var(--gray);
+  font-size: 20px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.services-full-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.service-full-card {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.service-full-card img {
+  height: 240px;
+  margin-bottom: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid var(--yellow);
+  background: #111;
+}
+
+.form label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 800;
+  color: var(--yellow);
+}
+
+.form input,
+.form textarea,
+.form select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,176,0,.55);
+  background: #050505;
+  color: #fff;
+  font-size: 16px;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.contact-stack {
+  margin-top: 18px;
+}
+
+.finance-details {
+  margin: 22px 0;
+  background: #080808;
+  border: 1px solid rgba(255,176,0,.5);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.finance-details summary {
+  cursor: pointer;
+  color: var(--yellow);
+  font-weight: 900;
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.contact-card.big {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.contact-card.big span {
+  font-size: 46px;
+}
+
+.social-section .social-icons {
+  justify-content: center;
+}
+
+footer {
+  background: #000;
+  border-top: 2px solid var(--yellow);
+  padding: 40px 7%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 25px;
+}
+
+footer h3 {
+  color: var(--yellow);
+  margin-bottom: 10px;
+}
+
+footer a {
+  display: block;
+  color: var(--gray);
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+footer a:hover {
+  color: var(--yellow);
+}
+
+footer .social-icon {
+  display: inline-flex;
+  color: var(--white);
+  margin: 5px 5px 5px 0;
+}
+
+.copy {
+  text-align: center;
+  color: var(--gray);
+  margin-top: 30px;
+}
+
+.mobile-contact-bar {
+  display: none;
+}
+
+@media (max-width: 1120px) {
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    right: 7%;
+    flex-direction: column;
+    align-items: stretch;
+    width: 280px;
+    background: #000;
+    border: 2px solid var(--yellow);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .quick-contact,
+  .service-preview-grid,
+  .payment-grid,
+  .contact-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-section,
+  .action-section,
+  .form-layout,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-full-card {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .quick-contact,
+  .service-preview-grid,
+  .payment-grid,
+  .contact-page-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-contact-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .mobile-contact-bar a {
+    background: var(--yellow);
+    color: #000;
+    text-align: center;
+    padding: 12px 4px;
+    font-weight: 900;
+    text-decoration: none;
+    border-right: 1px solid #000;
+  }
+
+  footer {
+    padding-bottom: 85px;
+  }
+}
+/* FORZAR fondo global visible en todo el sitio */
+
+section,
+main,
+footer,
+.page-hero,
+.dark-section,
+.payment-section,
+.quick-contact,
+.about-section,
+.action-section,
+.form-layout,
+.contact-page-grid,
+.social-section {
+    background: transparent !important;
+}
+
+/* mantiene tarjetas oscuras */
+.highlight-box,
+.action-card,
+.form,
+.payment-card,
+.contact-card,
+.service-preview,
+.service-full-card {
+    background: rgba(0,0,0,0.75) !important;
+    backdrop-filter: blur(6px);
+}
+
+/* hero principal más oscuro para que texto resalte */
+.hero {
+    background:
+    linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)),
+    url("imagenes/fondo-global.jpg") !important;
+
+    background-size: cover;
+    background-position: center;
+}
+/* FORZAR TEXTO AMARILLO EN ZONAS OSCURAS */
+
+.hero h1,
+.hero h2,
+.page-hero h1,
+.section h2,
+.contact-card h2,
+.service-preview h3,
+.service-full-card h2,
+.action-card h2,
+.highlight-box h2,
+.highlight-box h3 {
+    color: #ffb000 !important;
+}
+
+/* textos secundarios blancos */
+.hero p,
+.section p,
+.contact-card p,
+.service-preview p,
+.service-full-card p,
+footer p,
+footer a {
+    color: white !important;
+}
+
+/* botones negros con texto amarillo */
+.dark {
+    background: black !important;
+    color: #ffb000 !important;
+}
+/* ARREGLAR FONDO SOLO EN LA PANTALLA PRINCIPAL */
+
+.hero {
+  background: transparent !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("imagenes/fondo-global.jpg") center/cover no-repeat !important;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.hero h1,
+.hero h2 {
+  color: #ffb000 !important;
+}
+
+.hero p {
+  color: #ffffff !important;
+}
+/* TEXTO CTA FINAL */
+
+.cta h2 {
+    color: black !important;
+}
+
+.cta p {
+    color: #ffb000 !important;
+    font-weight: bold;
+}
+/* FORZAR TODO EL TEXTO DE CTA FINAL EN AMARILLO */
+
+.cta h2,
+.cta p,
+.cta a,
+.cta span {
+    color: #ffb000 !important;
+}
+/* TEXTO NEGRO EN BOTÓN DE LLAMADA */
+
+.cta .btn.primary {
+    color: black !important;
+    font-weight: bold;
+}
+section,
+.services,
+.gallery,
+.contact,
+.about,
+footer {
+    background: transparent !important;
+}
+.card,
+.service-card,
+.contact-box,
+.gallery-item {
+    background: rgba(255,255,255,0.05) !important;
+    backdrop-filter: blur(4px);
+}
+.mission-box {
+    background: rgba(0,0,0,0.70);
+    padding: 20px;
+    border-radius: 15px;
+    width: 420px;
+    margin-top: 20px;
+    color: white;
+}
+
+.mission-box h3 {
+    color: #f5a623;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.vision-box {
+    background: rgba(0,0,0,0.70);
+    padding: 20px;
+    border-radius: 15px;
+    width: 420px;
+    margin-top: 20px;
+    color: white;
+}
+
+.vision-box h3 {
+    color: #f5a623;
+    margin-bottom: 10px;
+}
+
+.vision-box p {
+    color: white;
+    line-height: 1.5;
+    font-size: 14px;
+}
+/* RECUADRO MISION */
+.mission-box {
+  background: rgba(20,20,20,0.85);
+  border: 2px solid #444;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* marco amarillo interno */
+.mission-box::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+
+/* RECUADRO VISION */
+.vision-box {
+  background: rgba(20,20,20,0.85);
+  border: 2px solid #444;
+  border-radius: 15px;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* marco amarillo interno */
+.vision-box::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.hero-content {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1,
+.hero p,
+.hero .buttons {
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.gallery-grid video {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
