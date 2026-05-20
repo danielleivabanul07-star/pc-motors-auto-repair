@@ -985,9 +985,9 @@ footer {
     background:
       linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
       url("imagenes/fondoweb.png");
-    background-size: 145% auto;
+    background-size: 145% cover;
     background-position: center top;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
   }
 
 }
